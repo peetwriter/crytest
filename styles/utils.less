@@ -1,0 +1,16 @@
+.gradient(@angle: 90deg, @start: #2BC0E4 10%, @stop: #EAECC6 90%) {
+  background: -webkit-linear-gradient(@angle, @start, @stop);
+  background:    -moz-linear-gradient(@angle, @start, @stop);
+  background:     -ms-linear-gradient(@angle, @start, @stop);
+  background:      -o-linear-gradient(@angle, @start, @stop);
+  background:         linear-gradient(@angle, @start, @stop);
+}
+
+
+.gradient_elipse(@position: center top, @type: ellipse cover, @start: #395467, @end: #1A2D3B){
+  background-image: radial-gradient(@position, @type, @start, @end);
+  background-image: -o-radial-gradient(@position, @type, @start, @end);
+  background-image: -ms-radial-gradient(@position, @type, @start, @end);
+  background-image: -moz-radial-gradient(@position, @type, @start, @end);
+  background-image: -webkit-radial-gradient(@position, @type, @start, @end);
+}

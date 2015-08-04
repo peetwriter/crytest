@@ -11,7 +11,7 @@ gulp.task('webserver', function() {
 gulp.task('less', function() {
   gulp.src('styles/main.less')
     .pipe(less())
-    .pipe(gulp.dest('styles'))
+    .pipe(gulp.dest('styles/css'))
     .pipe(connect.reload());
 });
 
