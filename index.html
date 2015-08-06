@@ -13,9 +13,34 @@
             </div>
         </div>
         <div class="sidebar__title">username</div>
+        <ul class="tabs">
+            <li aria-controls="account" class="tab">
+                <div class="tab__icon ion-trash-a"></div>
+                <span>My Account</span>
+            </li>
+            <li aria-controls="profile" class="tab">
+                <div class="tab__icon ion-eye"></div>
+                <span>My Profile</span>
+            </li>
+            <li aria-controls="settings" class="tab">
+                <div class="tab__icon ion-settings"></div>
+                <span>Settings</span>
+            </li>
+            <li aria-controls="logout" class="tab">
+                <div class="tab__icon ion-ios-cloud-download-outline"></div>
+                <span>Logout</span>
+            </li>
+        </ul>
     </div>
-    <div class="content">
 
+    <div class="content">
+        <div id="account"></div>
+        <div id="profile"></div>
+        <div id="settings"></div>
+        <div id="logout"></div>
     </div>
 </body>
 </html>
+
+<script src="js/routing.js"></script>
+
