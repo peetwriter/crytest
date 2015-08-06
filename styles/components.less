@@ -2,6 +2,7 @@
     width: 30%;
     height: 100%;
     position: fixed;
+    overflow: auto;
     .gradient(54deg, #172533 10%, #374B55 90%);
     .avatar{
         padding-top: 60px;
@@ -28,6 +29,13 @@
     right: 0;
     background: blue;
     .gradient_elipse();
+    .view{
+        width: 100%;
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
 }
 
 .circular-img {
@@ -55,12 +63,16 @@
         list-style-type: none;
         cursor: pointer;
         &:hover {
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.1);
             color: white;
         }
         &__icon{
             margin-right: 10px;
             display: inline-block;
+        }
+        &.active{
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
         }
     }
 }
