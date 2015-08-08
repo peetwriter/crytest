@@ -15,7 +15,7 @@
         <div class="sidebar__title">username</div>
         <ul class="tabs">
             <li aria-controls="account" class="tab">
-                <div class="tab__icon ion-trash-a"></div>
+                <div class="tab__icon ion-ios-people"></div>
                 <span>My Account</span>
             </li>
             <li aria-controls="profile" class="tab">
@@ -23,11 +23,11 @@
                 <span>My Profile</span>
             </li>
             <li aria-controls="settings" class="tab">
-                <div class="tab__icon ion-settings"></div>
+                <div class="tab__icon ion-ios-browsers-outline"></div>
                 <span>Settings</span>
             </li>
             <li aria-controls="logout" class="tab">
-                <div class="tab__icon ion-ios-cloud-download-outline"></div>
+                <div class="tab__icon ion-power"></div>
                 <span>Logout</span>
             </li>
         </ul>
@@ -41,7 +41,28 @@
             2
         </div>
         <div id="settings" class="view">
-           <div>Settings</div>
+            <div class="view__header">
+               <div class="view__heading">Settings</div>
+               <div class="view__text">Lorem ipsum dolor sit amet, consectetur</div>
+            </div>
+           <div class="view__subheading">GENERAL</div>
+           <hr>
+           <div class="choice">
+               <div class="view__text choice__text">Launch on PC start</div>
+               <div class="choice__box" id="pc">
+                   <div class="ion-checkmark box__icon active"></div>
+               </div>
+           </div>
+           <div class="choice">
+              <div class="view__text choice__text">Launch minimized in system</div>
+              <div class="choice__box" id="minimized">
+                  <div class="ion-checkmark box__icon"></div>
+              </div>
+          </div>
+          <div class="button-holder">
+                <div id="cancelB" class="button">CANCEL</div>
+                <div id="saveB" class="button">SAVE</div>
+          </div>
         </div>
         <div id="logout" class="view">
             4
@@ -51,4 +72,5 @@
 </html>
 
 <script src="js/routing.js"></script>
+<script src="js/observer.js"></script>
 
