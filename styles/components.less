@@ -28,6 +28,7 @@
     position: absolute;
     right: 0;
     background: blue;
+    border-left: 1px solid #0D161D;
     .gradient_elipse();
 }
 
@@ -122,6 +123,7 @@
         border-radius: 4px;
         background-color: rgba(0, 0, 0, 0.2);
         color: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
         .box__icon {
             position: relative;
             top: 50%;
@@ -130,6 +132,10 @@
         &.selected{
             color: #1698C2;
             background-color: rgba(0, 0, 0, 0.3);
+            &:hover{
+                color: #1698C2;
+                background-color: rgba(0, 0, 0, 0.1);
+            }
         }
         &:hover{
             background-color: rgba(0, 0, 0, 0.3);
@@ -158,6 +164,13 @@
         &:active{
             background-color: white;
             color: #1698C2;
+        }
+    }
+    .button_result{
+        border: 2px solid #8DA3C5;
+        &:hover{
+            color: #8DA3C5;
+            background-color: transparent;
         }
     }
 }

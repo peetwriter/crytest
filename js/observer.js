@@ -2,6 +2,9 @@ var model = {
     pc: false,
     minimized: false
 };
+var saveBtn = document.getElementById("saveB");
+var cancelBtn = document.getElementById("cancelB");
+var savedBtn = document.getElementById("savedB");
 
 Object.observe(model, function(changes){
     changes.forEach(function(change) {
@@ -23,9 +26,6 @@ for(var choise in model) {
     });
 }
 
-var saveBtn = document.getElementById("saveB");
-var cancelBtn = document.getElementById("cancelB");
-console.log(saveBtn);
 saveBtn.addEventListener('click', function() {
     save(model);
 });
@@ -36,6 +36,9 @@ cancelBtn.addEventListener('click', function() {
 
 var save = function(data){
     localStorage.setItem('choises', JSON.stringify(data));
+    savedBtn.style.display = "block";
+    saveBtn.style.display = "none";
+    cancelBtn.style.display = "none";
 }
 
 var init = function(){
