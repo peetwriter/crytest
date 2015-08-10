@@ -1,51 +1,56 @@
-var model = {
-    pc: false,
-    minimized: false
-};
-var saveBtn = document.getElementById("saveB");
-var cancelBtn = document.getElementById("cancelB");
-var savedBtn = document.getElementById("savedB");
+function Observer () {
+    var self = this;
+    self.Model = {
+        pc: false,
+        minimized: false
+    };
 
-Object.observe(model, function(changes){
-    changes.forEach(function(change) {
-        el = document.getElementById(change.name);
-        if (model[change.name]){
-            el.className = el.className.concat(" selected");
-        }
-        else{
-            el.className = el.className.replace(" selected", "");
-        }
+    self.saveBtn = document.getElementById("saveB");
+    self.cancelBtn = document.getElementById("cancelB");
+    self.savedBtn = document.getElementById("savedB");
+
+    Object.observe(self.Model, function(changes){
+        changes.forEach(function(change) {
+            el = document.getElementById(change.name);
+            if (self.Model[change.name]){
+                el.className = el.className.concat(" selected");
+            }
+            else{
+                el.className = el.className.replace(" selected", "");
+            }
+        });
+
     });
 
-});
-
-for(var choise in model) {
-    el = document.getElementById(choise);
-    el.addEventListener('click', function() {
-        model[this.id] = !model[this.id]
-    });
-}
-
-saveBtn.addEventListener('click', function() {
-    save(model);
-});
-
-cancelBtn.addEventListener('click', function() {
-    init();
-});
-
-var save = function(data){
-    localStorage.setItem('choises', JSON.stringify(data));
-    savedBtn.style.display = "block";
-    saveBtn.style.display = "none";
-    cancelBtn.style.display = "none";
-}
-
-var init = function(){
-    stModel = JSON.parse(localStorage.getItem('choises'));
-    for(var choise in stModel){
-        model[choise] = stModel[choise];
+    for(var choise in self.Model) {
+        el = document.getElementById(choise);
+        el.addEventListener('click', function() {
+            self.Model[this.id] = !self.Model[this.id]
+        });
     }
-};
 
-init();
+    self.saveBtn.addEventListener('click', function() {
+        self.save(self.Model);
+    });
+
+    self.cancelBtn.addEventListener('click', function() {
+        self.setDefault();
+    });
+
+    self.save = function(data){
+        localStorage.setItem('choises', JSON.stringify(data));
+        self.savedBtn.style.display = "block";
+        self.saveBtn.style.display = "none";
+        self.cancelBtn.style.display = "none";
+    }
+
+    self.setDefault = function(){
+        savedModel = JSON.parse(localStorage.getItem('choises'));
+        for(var choise in savedModel){
+            self.Model[choise] = savedModel[choise];
+        }
+    };
+}
+
+var observer = new Observer();
+observer.setDefault();
