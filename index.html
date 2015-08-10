@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/css/main.css">
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="avatar">
+            <div class="circular-img circular-img_shadowed" style="background-image: url(img/mr-bean.jpg)">
+            </div>
+        </div>
+        <div class="sidebar__title">username</div>
+        <ul class="tabs">
+            <li aria-controls="account" class="tab">
+                <div class="tab__icon ion-ios-people"></div>
+                <span>My Account</span>
+            </li>
+            <li aria-controls="profile" class="tab">
+                <div class="tab__icon ion-eye"></div>
+                <span>My Profile</span>
+            </li>
+            <li aria-controls="settings" class="tab">
+                <div class="tab__icon ion-ios-browsers-outline"></div>
+                <span>Settings</span>
+            </li>
+            <li aria-controls="logout" class="tab">
+                <div class="tab__icon ion-power"></div>
+                <span>Logout</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="account" class="view">
+            <div class="view__header">
+               <div class="view__heading">Account</div>
+               <div class="view__text">Lorem ipsum dolor sit amet, consectetur</div>
+            </div>
+        </div>
+        <div id="profile" class="view">
+            <div class="view__header">
+               <div class="view__heading">Profile</div>
+               <div class="view__text">Lorem ipsum dolor sit amet, consectetur</div>
+            </div>
+        </div>
+        <div id="settings" class="view">
+            <div class="view__header">
+               <div class="view__heading">Settings</div>
+               <div class="view__text">Lorem ipsum dolor sit amet, consectetur</div>
+            </div>
+            <div class="view__subheading">GENERAL</div>
+            <hr>
+            <div class="choice">
+                <div class="view__text choice__text">Launch on PC start</div>
+                <div class="choice__box" id="pc">
+                    <div class="ion-checkmark box__icon active"></div>
+                </div>
+            </div>
+            <div class="choice">
+                <div class="view__text choice__text">Launch minimized in system</div>
+                <div class="choice__box" id="minimized">
+                    <div class="ion-checkmark box__icon"></div>
+                </div>
+            </div>
+            <div class="button-holder">
+                <div id="cancelB" class="button">CANCEL</div>
+                <div id="saveB" class="button">SAVE</div>
+                <div id="savedB" style="display:none" class="button button_result">SAVED</div>
+            </div>
+        </div>
+        <div id="logout" class="view">
+            <div class="view__header">
+               <div class="view__heading">Logouted</div>
+               <div class="view__text">Lorem ipsum dolor sit amet, consectetur</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/observer.js"></script>
+
+</body>
+</html>
+
